@@ -10,4 +10,25 @@
     creer une variable n qui est égal à 0
     faire un window setInterval qui incremente n de 1 toute les secondes et qui charger ensuite la fonction render()
 
-- 
+- Chapitre 3, la syntaxe JSX
+    Ajouter le liens du script babel juste avant le app.js
+    definir le type de app js text babel
+    supprimer le reactcreateElement sans la synatxe JSX
+    creer un h1 avec dedans bonjour les gens
+    ensuiter creer un span et mettre dedans 0
+    remplacer le zero par une expresion evalue n
+    creer une function nommé numberFormat qui prend n en paramétre
+        il returne n qui va ajouter un zero devant le n
+    faire une condition qui afficher les nombre impaire
+    dans span remplace l'appel au fonction par un tableau avec deux elements
+    ajouter un id au h1 nommé title
+    creer une classe dans le h1 nommé title
+    utiliser l'interpolation pour que id de h1 sois title suivit de n
+    créer un tableau nommé items qui a 3 enfants tache 1, 2, 3 dans la function render
+    mettre h1 dans un div et dans ce div creer un ul à la suite de h1 
+        ul prends un li nommée premier li
+    remplace le mot div par un fragment react
+    creer une const lis qui va faire une map sur le tableau items et pour chaque items
+    il va creer un li et lui append l'élément
+    remplacer lis dans ul par la function map
+    ensuite attribue une clé à chaque item

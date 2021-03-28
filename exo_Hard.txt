@@ -1,2 +1,4 @@
 - faire les installation de base
+- creer des elements react 
+- creer une variable sans charge le DOM
 - 

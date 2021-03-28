@@ -1,0 +1,13 @@
+ - Chapitre 2, Nos premiers pas avec React : 
+    Ajouter les liens CDN de react pour travailler sur le DOM
+    creer un fichier app.js
+    creer un element react de type h1, ne pas lui assigner d'enfant lui donner un text bonjour tout le monde 
+    afficher le titre sur le body
+    afficher sur une div nommé app
+    créer dans title un nouveau element react de type span aucune propriéte et lui assigner 0 comme text
+    sauvegarder les etapes passer dans une function nommé render
+    ensuite l'appeler au chargement de la page
+    creer une variable n qui est égal à 0
+    faire un window setInterval qui incremente n de 1 toute les secondes et qui charger ensuite la fonction render()
+
+- 

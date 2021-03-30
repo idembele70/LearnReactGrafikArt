@@ -2,15 +2,17 @@
     Ajouter les liens CDN de react pour travailler sur le DOM
     creer un fichier app.js
     creer un element react de type h1, ne pas lui assigner d'enfant lui donner un text bonjour tout le monde 
+    le renommer en title
     afficher le titre sur le body
     afficher sur une div nommé app
+    ajouter un autre enfant au div avec un id app
     créer dans title un nouveau element react de type span aucune propriéte et lui assigner 0 comme text
     sauvegarder les etapes passer dans une function nommé render
     ensuite l'appeler au chargement de la page
     creer une variable n qui est égal à 0
     faire un window setInterval qui incremente n de 1 toute les secondes et qui charger ensuite la fonction render()
 
-- Chapitre 3, la syntaxe JSX
+- Chapitre 3, la syntaxe JSX :
     Ajouter le liens du script babel juste avant le app.js
     definir le type de app js text babel
     supprimer le reactcreateElement sans la synatxe JSX
@@ -32,3 +34,16 @@
     il va creer un li et lui append l'élément
     remplacer lis dans ul par la function map
     ensuite attribue une clé à chaque item
+
+- Chapitre 4, Notre premier composant : 
+    Tout supprimer
+    Creer une fonction nommé Welcome qui prend une paramétre nommée props
+    cette fonctionner retourne un h1 qui dit bonjour
+    faire une balise impaire avec welcome dans un render du dom de react
+    ensuite le mettre sur le div au id app 
+    ajouter un attribue à la balise welcome nommé name avec une valeur jean
+    faire un console log de props et voir le resultat
+    faire un bonjour du de l'attibre name
+     
+
+    

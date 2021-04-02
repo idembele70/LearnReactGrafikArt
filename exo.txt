@@ -37,13 +37,34 @@
 
 - Chapitre 4, Notre premier composant : 
     Tout supprimer
-    Creer une fonction nommé Welcome qui prend une paramétre nommée props
+    Creer une fonction nommé Welcome qui prend une paramétre nommé props
     cette fonctionner retourne un h1 qui dit bonjour
     faire une balise impaire avec welcome dans un render du dom de react
     ensuite le mettre sur le div au id app 
     ajouter un attribue à la balise welcome nommé name avec une valeur jean
     faire un console log de props et voir le resultat
-    faire un bonjour du de l'attibre name
+    faire un bonjour avec l'attribue name
+    remplacer props dans le paramétre par une destructuration avec un objet nommé name
+    ajouter du text content dans welcome et le faire devenir une balise paire
+    remplacer tout ce qui aprés le return de la fonction par un return une div
+    qui a pour enfant un h1 qui retourne bonjour avec name
+    ajouter une paragraphe dans lequel on interplore children
+    ajouter un paramétre qui desutructure un enfant nommé children
+    rénome la fonction Welcome a WelcomeFunc
+    Créer une class Welcome qui fonctionner comme un composant react
+    à l'interieur de cette class créer une function render qui retournera un titre h1 qui afficher bonjour
+    faire un console log dans la function render du props de la class
+    depuis la class Welcome afficher bonjour avec le nom de la personne et le text content de Welcome
+    construire une super propriéte et afficher props dans la console
+    creer une fonction nommé Home
+    cette fonction return une div qui afficher deux Welcome avec deux nom différents
+    afficher Home dans le div app à la place de welcome
+    creer une classe Clock qui va etendre du composant react
+    dans cette class creer une fonction render qui return une div qui retourne une date to localeString
+    et time to localeString creer un super constructer qui prends en paramétre
+    qui creer une variable nommée state qui interplore une variable date de type Date
+    ensuite dans le rendre utiliser la variable date de state
+
      
 
     

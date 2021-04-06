@@ -5,7 +5,7 @@
     le renommer en title
     afficher le titre sur le body
     afficher sur une div nommé app
-    ajouter un autre enfant au div avec un id app
+    ajouter un autre enfant au div avec un id app ###
     créer dans title un nouveau element react de type span aucune propriéte et lui assigner 0 comme text
     sauvegarder les etapes passer dans une function nommé render
     ensuite l'appeler au chargement de la page
@@ -20,12 +20,12 @@
     ensuiter creer un span et mettre dedans 0
     remplacer le zero par une expresion evalue n
     creer une function nommé numberFormat qui prend n en paramétre
-        il returne n qui va ajouter un zero devant le n
+        il retourné n qui va ajouter un zero devant le n
     faire une condition qui afficher les nombre impaire
     dans span remplace l'appel au fonction par un tableau avec deux elements
     ajouter un id au h1 nommé title
     creer une classe dans le h1 nommé title
-    utiliser l'interpolation pour que id de h1 sois title suivit de n
+    utiliser l'interpolation pour que id de h1 soit title suivit de n
     créer un tableau nommé items qui a 3 enfants tache 1, 2, 3 dans la function render
     mettre h1 dans un div et dans ce div creer un ul à la suite de h1 
         ul prends un li nommée premier li
@@ -38,13 +38,13 @@
 - Chapitre 4, Notre premier composant : 
     Tout supprimer
     Creer une fonction nommé Welcome qui prend une paramétre nommé props
-    cette fonctionner retourne un h1 qui dit bonjour
+    cette fonction retourne un h1 qui dit bonjour
     faire une balise impaire avec welcome dans un render du dom de react
     ensuite le mettre sur le div au id app 
     ajouter un attribue à la balise welcome nommé name avec une valeur jean
     faire un console log de props et voir le resultat
     faire un bonjour avec l'attribue name
-    remplacer props dans le paramétre par une destructuration avec un objet nommé name
+    remplacer props dans le paramètre par une destructuration avec un objet nommé name
     ajouter du text content dans welcome et le faire devenir une balise paire
     remplacer tout ce qui aprés le return de la fonction par un return une div
     qui a pour enfant un h1 qui retourne bonjour avec name
@@ -55,15 +55,28 @@
     à l'interieur de cette class créer une function render qui retournera un titre h1 qui afficher bonjour
     faire un console log dans la function render du props de la class
     depuis la class Welcome afficher bonjour avec le nom de la personne et le text content de Welcome
+    ne pas oublier de utiliser l'affiche sur le dom !
     construire une super propriéte et afficher props dans la console
     creer une fonction nommé Home
     cette fonction return une div qui afficher deux Welcome avec deux nom différents
     afficher Home dans le div app à la place de welcome
     creer une classe Clock qui va etendre du composant react
     dans cette class creer une fonction render qui return une div qui retourne une date to localeString
-    et time to localeString creer un super constructer qui prends en paramétre
-    qui creer une variable nommée state qui interplore une variable date de type Date
-    ensuite dans le rendre utiliser la variable date de state
+    et time to localeString 
+    afficher Clock dans la function Home
+    créer un super constructeur qui prends en paramétre props sur le constructeur et super
+     creer dans le constructeur une variable nommée state qui est objet qui contient une clé date de type Date
+    ensuite dans utiliser la clé date de state à dans le render
+    dans Clock créer une methode componentDidMount et une autre nommé componentWillUnMount
+    Dans le constructeur créer une variable timer et le mettre à null
+    dans la fonction componentDidMount assigné a la variable timer un setInterval de 1 seconde
+    dans la fonction componentWillUnMount utiliser un clearInterval sur le timer
+    creer une methode nommé tick dans cette fonction utiliser une methode nommé setState 
+    qui prends en paramètre un objet avec une clé qui est de type date
+    dans la fonction componentDidMount dans le set interval appel la methode tick a la place de la fonction
+    utiliser bind sur la methode tick et lui en paramètre this pour ne pas perdre le contexte de this
+
+
 
      
 

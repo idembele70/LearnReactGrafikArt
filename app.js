@@ -14,23 +14,34 @@ class Welcome extends React.Component {
 }
 
 class Clock extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state = {date : new Date()}
+        this.state = { date: new Date() };
+        this.timer = null;
     }
-    render(){
+    render() {
         return <div>
             Il est {this.state.date.toLocaleDateString()} {this.state.date.toLocaleTimeString()}
         </div>
     }
+    tick() {
+        this.setState({ date: new Date() });
+    }
+
+    componentDidMount() {
+        this.timer = setInterval(this.tick.bind(this), 1000);
+    }
+    componentWillUnMount() {
+        clearInterval(this.timer);
+    }
 }
 
-function Home(){
+function Home() {
     return <div>
-        <Welcome name="jean"/>
-        <Welcome name="nyna"/>
-        <Clock/>
+        <Welcome name="jean" />
+        <Welcome name="nyna" />
+        <Clock />
     </div>
 }
 
-ReactDOM.render(<Home/>, document.querySelector('body > div'));
+ReactDOM.render(<Home />, document.querySelector('body > div'));

@@ -49,7 +49,7 @@
     remplacer tout ce qui aprés le return de la fonction par un return une div
     qui a pour enfant un h1 qui retourne bonjour avec name
     ajouter une paragraphe dans lequel on interplore children
-    ajouter un paramétre qui desutructure un enfant nommé children
+    ajouter un paramétre qui destructure un enfant nommé children
     rénome la fonction Welcome a WelcomeFunc
     Créer une class Welcome qui fonctionner comme un composant react
     à l'interieur de cette class créer une function render qui retournera un titre h1 qui afficher bonjour
@@ -72,10 +72,16 @@
     dans la fonction componentDidMount assigné a la variable timer un setInterval de 1 seconde
     dans la fonction componentWillUnMount utiliser un clearInterval sur le timer
     creer une methode nommé tick dans cette fonction utiliser une methode nommé setState 
-    qui prends en paramètre un objet avec une clé qui est de type date
+    qui prends en paramètre un objet avec une clé date qui est de type date
     dans la fonction componentDidMount dans le set interval appel la methode tick a la place de la fonction
     utiliser bind sur la methode tick et lui en paramètre this pour ne pas perdre le contexte de this
-
+    créer une class incrementer qui incremente affiche dans Home
+    incremente aura une propriéte nommé start qui sera la valeur de départ
+    remplacer l'objet de setState par une fonction qui prend en paramètre state et props
+    il retourne l'objet qui était entre la paranthèse de setState
+    ajouter une propriéte nommé step qui sera la valeur d'incrementation
+    ajouter la valeur d'incrementation par default de step est 1 et start à 0
+    et faire fonctionner la classe Incrementer sans valeur dans start ni dans step
 
 
      

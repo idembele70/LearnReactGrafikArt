@@ -83,6 +83,14 @@
     ajouter la valeur d'incrementation par default de step est 1 et start à 0
     et faire fonctionner la classe Incrementer sans valeur dans start ni dans step
 
+- Chapitre 5, Les évènements :
+    Créer une class Nommé ManualIncrementer lui etendre un react Component
+    dans le constructeur creer state qui prends un objet avec clé n à laquelle on assigner 0
+    appeler la fonction render qui retourne dans une div n et un bouton qui permet d'incrementer
+    créer la fonction incrementer qui incremente de 1 en 1
+    appeler ManualIncrementer dans Home
+    mettre un evenement sur le bouton pour incrementer la valeur au click
+
 
      
 

@@ -3,7 +3,6 @@
 - creer une variable sans charge le DOM
 - creer une balise WelcomeFunc qui affiche bonjour 
 avec l'attribut name et affiche sont enfant
-- creer une balise Home qui affiche deux WelcomeFunc
 - creer une class Clock qui affiche l'heure et la recharge
 toute les secondes sans recharger la page
 - creer une class welcome qui affiche bonjour le nom 
@@ -12,3 +11,6 @@ de la balise et son enfant
 égal à 10 et tout les secondes il incremente start
 ajouter une seconde propriéte nommé step qui sera la valeur
 d'incrementation
+- creer un boutton qui premet d'incrementer manuellement 
+avec le click
+

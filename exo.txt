@@ -90,8 +90,19 @@
     créer la fonction incrementer qui incremente de 1 en 1
     appeler ManualIncrementer dans Home
     mettre un evenement sur le bouton pour incrementer la valeur au click
-
-
-     
-
-    
+    utiliser un prevent default dans incremente de ManualIncrementer
+    et remplace le bouton par un lien
+    dans la class incrementer créer une fonction nommé pause
+    créer une fonction nommé play
+    utiliser la methode play dans componentDidMount
+    ajouter une clé timer dans l'objet this state et sa valeur est null
+    supprimer l'autre timer
+    dans play remplacer le code par un clear interval sur timer
+    et un set state qui assigner a la clé timer un setInterval 
+    de incremente d'une séconde
+    dans pause faire un clear interval de timer
+    et faire un setState sur timer et le mettre à null
+    ajouter un bouton nommé pause qui onclick appel pause
+    créer un bouton nommé play qui onclick appel play
+    faire un ternaire en fonction de n de stage 
+    pour affiche les boutton play et pause

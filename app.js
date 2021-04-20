@@ -51,11 +51,16 @@ class Incrementer extends React.Component {
         clearInterval(this.timer)
     }
     increment() {
+        e.preventDefault();
         this.setState(function (state, props) { return { n: state.n + this.step } })
+    }
+    pause(){
+        
     }
     render() {
         return <div>
             {this.state.n}
+            <button onClick={this.increment()}>Pause</button>
         </div>
     }
 }
@@ -65,14 +70,15 @@ class ManualIncrementer extends React.Component {
         super(props);
         this.state = { n: 0 };
     }
-    increment() {
+    increment(e) {
+        e.preventDefault()
         return this.setState((state,params) => ({n : state.n +1}))
     }
 
     render() {
         return <div>
             Valeur : {this.state.n}
-            <button onClick={this.increment.bind(this)}> Incrementer</button>
+            <a href="/" onClick={this.increment.bind(this)}> Incrementer</a>
         </div>
     }
 }
@@ -82,7 +88,7 @@ function Home() {
         <Welcome name="jean" />
         <Welcome name="nyna" />
         <Clock />
-        <ManualIncrementer />
+        <Incrementer />
     </div>
 }
 Incrementer.defaultProps = {

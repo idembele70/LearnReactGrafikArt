@@ -1,16 +1,26 @@
 - faire les installation de base
 - creer des elements react 
-- creer une variable sans charge le DOM
+
+- creer une fonction nommé render qui affiche un nombre qui s'incrementer.
+
 - creer une balise WelcomeFunc qui affiche bonjour 
 avec l'attribut name et affiche sont enfant
+
 - creer une class Clock qui affiche l'heure et la recharge
 toute les secondes sans recharger la page
+
+-Creer une fonction Home qui affiche toute les elements ci-dessous
 - creer une class welcome qui affiche bonjour le nom 
 de la balise et son enfant
+
 - creer une baliser incrementer qui a une propriéte start 
 égal à 10 et tout les secondes il incremente start
 ajouter une seconde propriéte nommé step qui sera la valeur
-d'incrementation
+d'incrementation, ensuite permettre à l'utilisateur de mettre
+le ternaire en pause
+
 - creer un boutton qui premet d'incrementer manuellement 
-avec le click
+avec le click, ensuite remplace le bouton par un liens 
+faire ensorte que le liens ne redirige pas vers le href
+
 

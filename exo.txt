@@ -92,17 +92,19 @@
     mettre un evenement sur le bouton pour incrementer la valeur au click
     utiliser un prevent default dans incremente de ManualIncrementer
     et remplace le bouton par un lien
-    dans la class incrementer créer une fonction nommé pause
-    créer une fonction nommé play
-    utiliser la methode play dans componentDidMount
     ajouter une clé timer dans l'objet this state et sa valeur est null
     supprimer l'autre timer
-    dans play remplacer le code par un clear interval sur timer
-    et un set state qui assigner a la clé timer un setInterval 
-    de incremente d'une séconde
-    dans pause faire un clear interval de timer
-    et faire un setState sur timer et le mettre à null
-    ajouter un bouton nommé pause qui onclick appel pause
-    créer un bouton nommé play qui onclick appel play
-    faire un ternaire en fonction de n de stage 
-    pour affiche les boutton play et pause
+    dans la class incrementer créer une fonction nommé pause
+    il fait un clear interval sur la clé timer de state il le met à null avec setState;
+    créer une fonction nommé play il fait un clear 
+    interval sur la clé timer de state et fais un setState sur timer de setState
+    tout les secondes il l'incremente
+    utiliser la methode play dans componentDidMount et pause dans componentWillUnMount
+    ajouter un bouton son innerHTML est egal a une fonction nommé label
+     qui onclick appel pause fait appel a une fonction nommé toggle
+    la fonction nommé toggle retourne un ternaire sur timer de state
+    pour appeler la fonction play ou pause
+    la fonction nommé label qui fais un ternaire si timer de state 
+    de la class est true affiche un string Pause sinon appel un string play
+    créer une fonction nommé label qui return un ternaire sur le timer de state il retourne
+    sois Pause ou Lecture

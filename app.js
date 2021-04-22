@@ -40,27 +40,40 @@ class Clock extends React.Component {
 class Incrementer extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { n: props.start };
+        this.state = { n: props.start, timer: null };
         this.step = props.step;
-        this.timer = null;
     }
     componentDidMount() {
-        this.timer = setInterval(this.increment.bind(this), 1000)
+        return this.play();
     }
     componentWillUnMount() {
-        clearInterval(this.timer)
+        return this.pause();
+    }
+    pause() {
+        clearInterval(this.state.timer);
+        return this.setState(()=> {
+            return this.state.timer = null
+        })
+    }
+    play() {
+        clearInterval(this.state.timer);
+        return this.setState({
+            timer: setInterval(this.increment.bind(this), 1000)
+        })
     }
     increment() {
-        e.preventDefault();
         this.setState(function (state, props) { return { n: state.n + this.step } })
     }
-    pause(){
-        
+    toggle() {
+        return this.state.timer ? this.pause() : this.play();
+    }
+    label() {
+        return this.state.timer ? "Pause" : "Play"
     }
     render() {
         return <div>
-            {this.state.n}
-            <button onClick={this.increment()}>Pause</button>
+            Valeur : {this.state.n}
+            <button onClick={this.toggle.bind(this)}>{this.label()}</button>
         </div>
     }
 }
@@ -72,7 +85,7 @@ class ManualIncrementer extends React.Component {
     }
     increment(e) {
         e.preventDefault()
-        return this.setState((state,params) => ({n : state.n +1}))
+        return this.setState((state, params) => ({ n: state.n + 1 }))
     }
 
     render() {

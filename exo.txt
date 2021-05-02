@@ -97,8 +97,8 @@
     dans la class incrementer créer une fonction nommé pause
     il fait un clear interval sur la clé timer de state il le met à null avec setState;
     créer une fonction nommé play il fait un clear 
-    interval sur la clé timer de state et fais un setState sur timer de setState
-    tout les secondes il l'incremente
+    interval sur la clé timer de state et fais un setState sur timer de state il lui
+    assigne toutes les secondes une l'incrementation de fonction incremente
     utiliser la methode play dans componentDidMount et pause dans componentWillUnMount
     ajouter un bouton son innerHTML est egal a une fonction nommé label
      qui onclick appel pause fait appel a une fonction nommé toggle
@@ -108,3 +108,50 @@
     de la class est true affiche un string Pause sinon appel un string play
     créer une fonction nommé label qui return un ternaire sur le timer de state il retourne
     sois Pause ou Lecture
+    créer une methode reset qui fait un setState sur n et le met égal à start
+    créer un bouton qui on click appel reset et son innerHTML est Réinitialiser
+    dans reset appeler pause et play avant le set state
+    dans le constructeur assigne la methode toggle et reinitialiser a des variable
+    et remplacer l'appel des fonctions dans le render par ces deux boutton
+
+- Chapitre 6, Les Formulaires :
+    Tout supprimer
+    créer une class Home l'étendre de React Component
+    l'appel dans un reactdom render
+    dans la class home appeler une méthode render qui retourne une div
+    qui contient un label appeler l'attribut htmlFor de label qui prend
+    une string nommé nom sont textContent est Mon nom
+    créer un input avec l'attribut type égal à un string text 
+    un id égal à un string nom, un name égal a un string nom
+    créer un constructeur dans ce dernier créer un etat avec une clé
+    nom qui prend un string nommé jean
+    appeler la clé nom dans le input en le mettant dans value du input
+    dans le input créer un évènements onChange qui est égal a une variable
+    nommé handleChange
+    créer la méthode handleChange elle prend une variable nommé e en paramètre
+    dans le constructeur assigne a la variable handleChange a la méthode handleChange
+    et ne pas oublie de bind le this
+    Dans la méthode handleChange faire un setstate sur la clé nom lui assigner la valeur
+    de la target de e
+    créer un textarea avec l'attribut  un id égal à un string nom, 
+    un name égal a un string nom
+    Dans ce textarea créer un évènements onChange qui est égal a la variable
+    nommé handleChange
+    créer une balise select avec des options un avec une valeur demo1 son textContent est 
+    égal à Demo1 faire pareil jusqu'a démo 3
+    dans select assigner a son value la clé nom de state qui égal à demo2 et utiliser
+    onChange sur select
+    dans le div afficher avant le select la clé nom de state 
+    rendre le champs mutiple
+    assigné a la clé nom de state un tableau avec deux string demo2 et demo1
+    stringify l'affichage de la clé nom dans le render
+    ensuite dans handleChange faire un tableau avec selectedOptions de
+    target de e et et le parcourir avec map pour affiche la valeur des 
+    éléments du tableau
+    dans state ajouter une clé checked qui prend un bool true
+    créer un input de type checkbox lui assigne un attribut checked 
+    qui est égal à la clé checked à la clé checked
+    lui assigne une méthode onChange qui appel handleChange
+    dans la méthode handleChange a la clé checked assigné à checked de la target de e
+
+    

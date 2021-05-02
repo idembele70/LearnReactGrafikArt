@@ -1,15 +1,16 @@
 - faire les installation de base
-- creer des elements react 
+- creer des elements react
 
 - creer une fonction nommé render qui affiche un nombre qui s'incrementer.
 
 - creer une balise WelcomeFunc qui affiche bonjour 
-avec l'attribut name et affiche sont enfant
+avec l'attribut name et affiche son enfant
+
+-Creer une fonction Home qui affiche toute les elements ci-dessous
 
 - creer une class Clock qui affiche l'heure et la recharge
 toute les secondes sans recharger la page
 
--Creer une fonction Home qui affiche toute les elements ci-dessous
 - creer une class welcome qui affiche bonjour le nom 
 de la balise et son enfant
 
@@ -17,10 +18,22 @@ de la balise et son enfant
 égal à 10 et tout les secondes il incremente start
 ajouter une seconde propriéte nommé step qui sera la valeur
 d'incrementation, ensuite permettre à l'utilisateur de mettre
-le ternaire en pause
+l'incrementation en pause et créer un bouton qui permet
+de reinitialiser
 
 - creer un boutton qui premet d'incrementer manuellement 
 avec le click, ensuite remplace le bouton par un liens 
 faire ensorte que le liens ne redirige pas vers le href
 
+- Tout supprimer
 
+- Creer une Class Home avec un input et pareil avec 
+ un text area qui est controler via  React,
+ il peut etre modifie avec la méthode react !
+
+ -Creer un select avec trois options afficher
+  dans le dom l'options selectionner par default
+
+  -creer un select avec trois options et permettre à 
+  l'utiliser de faire des choix mutiples
+  

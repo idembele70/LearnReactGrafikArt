@@ -31,9 +31,25 @@ faire ensorte que le liens ne redirige pas vers le href
  un text area qui est controler via  React,
  il peut etre modifie avec la méthode react !
 
- -Creer un select avec trois options afficher
+- Creer un select avec trois options afficher
   dans le dom l'options selectionner par default
 
-  -creer un select avec trois options et permettre à 
+- Creer un select avec trois options et permettre à 
   l'utiliser de faire des choix mutiples
   
+- Creer un input check qui peut etre controler par react
+  faire un ternaire qui affiche un message si l'input est
+  check
+
+- Créer Trois input nommé nom, prenom de type text et newsletter
+  de type checkbox il sont controler par react 
+  
+- Créer un input type text avec une valeur par default il n'est pas
+  il n'est pas controler par react
+
+- ajouter bootstrap au projet
+
+- Creer un composant Class nommé field qui permet d'afficher un input et son label
+  l'affiche dans le Component Home faire pour name, prénom et newsletter
+
+- Faire pareil avec une fonction  

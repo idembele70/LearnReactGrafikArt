@@ -153,5 +153,45 @@
     qui est égal à la clé checked à la clé checked
     lui assigne une méthode onChange qui appel handleChange
     dans la méthode handleChange a la clé checked assigné à checked de la target de e
-
-    
+    ajouter une phrase en bas du DOM qui s'affiche si et seulement si l'input est check
+    remplace le contenue de render
+    créer une div créer un label avec un for égal a nom ensuite un input de type text 
+    sa valeur est égal à la clé nom de state si on change le champs on appel la méthode
+    onChange qui est handleChange lui donné et un id et un attribut name tout égal
+    faire pareil avec prenom et newsletter la seule dif de newsletter est qu'il à un
+    input de type checkbox
+    a un string nom
+    ajoute des state un nom et le prenom ont des string vide, une clé newsletter qui est égal
+    à false par défault
+    ajouter au DOM un string de state
+    Dans la méthode handleChange faire créer une constante name qui est égal au name de la 
+    target de e
+    faire un setState sur le name le name doit etre entre Crochet et lui assigne la value 
+    de la target de e
+    creer une constante nommé type qui est égal au type de la target de e
+    creer une constante value ternaire qui verifie si le type est un checkbox alors
+    on recuperer le checked de la target de e sinon on récuperer la target de la value de e
+    créer un input de type text  mettre son attribut defaultValue a salut
+    ajouter bootstrap au projet
+    creer une class nommé Field il etends de react component dans le render 
+    creer une constante qui est une destructuration({}) à l'interieur de la destructuration on 
+    met name, value, children et onChange il est égal au props de la class
+    il retourne un div de class form-group à l'interieur
+    on a un label sont for est égal au à name de la destructuration son inner est égal au children
+    de la destructuration creer un input de type text sa valeur est la value de la destructuration 
+    son onChange équivaut au onChange de la destructuration l'id et le name sont égal 
+    à la destructuration du name lui assigne une nom de class form-control
+    dans le render de home remplacer les ligne d'inputs par un div de class container à l'interieur
+    on a une balise Field son nom est prénom sa value la clé nom de la state de la class son onChange
+    équivaut à la function handleChange et son children nom faire pareil pour prenom
+    ajouter la méthode stringify de JSON qui prends en argument state de la class
+    creer une function Field qui se comporte pareil que la class Field
+    ensuite en faire une fonction nommé checkbox similaire field
+    ensuite l'appeler dans render de Home
+    dans le render de home créer un boutton de class btn btn primary son inner est envoyer remplacer
+    dans le render de home la div par un Formulaire lui assigner un onSubmit il appel la méthode 
+    handleSubmit
+    handleSubmit prend en paramètre e et il fait un preventDefault sur e ne pas oublie de assigne le bind
+    a la variable dans le constructeur
+    créer une const nommé data qui est la méthode stringify de JSON il prends en paramètre state et faire 
+    un console de data ensuite 

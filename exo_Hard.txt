@@ -52,4 +52,5 @@ faire ensorte que le liens ne redirige pas vers le href
 - Creer un composant Class nommé field qui permet d'afficher un input et son label
   l'affiche dans le Component Home faire pour name, prénom et newsletter
 
-- Faire pareil avec une fonction  
+- Faire pareil avec une fonction ensutie ajouter un boutton a home pour recuperer
+  les saisie user dans la console avec JSON et reinitialiser les champs apres click

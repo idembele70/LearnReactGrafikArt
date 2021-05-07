@@ -19,17 +19,18 @@ de la balise et son enfant
 ajouter une seconde propriéte nommé step qui sera la valeur
 d'incrementation, ensuite permettre à l'utilisateur de mettre
 l'incrementation en pause et créer un bouton qui permet
-de reinitialiser
+de reinitialiser ne pas oublier de definir des valeurs
+par defaults a start et step
 
-- creer un boutton qui premet d'incrementer manuellement 
+- creer un boutton qui permet d'incrementer manuellement 
 avec le click, ensuite remplace le bouton par un liens 
 faire ensorte que le liens ne redirige pas vers le href
 
 - Tout supprimer
 
-- Creer une Class Home avec un input et pareil avec 
- un text area qui est controler via  React,
- il peut etre modifie avec la méthode react !
+- Creer une Class Home avec un input et pareil avec
+  un text area qui est controler via  React,
+  il peut etre modifie avec la méthode react !
 
 - Creer un select avec trois options afficher
   dans le dom l'options selectionner par default

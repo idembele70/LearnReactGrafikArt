@@ -46,8 +46,6 @@ class Temperature extends React.Component {
 };
 
 
-
-
 const Home = () => {
     return <React.Fragment>
         <Temperature />

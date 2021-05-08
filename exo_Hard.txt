@@ -55,3 +55,14 @@ faire ensorte que le liens ne redirige pas vers le href
 
 - Faire pareil avec une fonction ensutie ajouter un boutton a home pour recuperer
   les saisie user dans la console avec JSON et reinitialiser les champs apres click
+
+          TP : Convertisseur Celsius / Fahrenheit
+
+- utiliser bootstrap !
+- créer un composant nommé BoilingVedict il prends un paramètre nommé celcius
+et affiche dans le dom si l'eau bout ou pas 
+
+- créer un composant appelé Calculator. Il affiche un <input> qui permet de saisir une température 
+  et de conserver sa valeur dans this.state.temperature.
+
+- 

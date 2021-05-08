@@ -195,3 +195,5 @@
     a la variable dans le constructeur
     créer une const nommé data qui est la méthode stringify de JSON il prends en paramètre state et faire 
     un console de data ensuite 
+
+- Chapitre 7, TP : Convertisseur Celsius / Fahrenheit :

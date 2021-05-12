@@ -59,10 +59,19 @@ faire ensorte que le liens ne redirige pas vers le href
           TP : Convertisseur Celsius / Fahrenheit
 
 - utiliser bootstrap !
-- créer un composant nommé BoilingVedict il prends un paramètre nommé celcius
-et affiche dans le dom si l'eau bout ou pas 
+- créer un composant nommé BoilingVedict il a un attribut nommé celsius
+et afficher sur un alert de bootstrap si l'eau bout ou pas.
 
 - créer un composant appelé Calculator. Il affiche un <input> qui permet de saisir une température 
-  et de conserver sa valeur dans this.state.temperature.
+  et d'afficher si l'eau bout ou l'eau ne bout pas !
+
+- créer un component nommé temperatureInput avec une propriéte scale il prends soit un string c pour
+  celsius et un string f pour Fahrenheit et créer objet au début du fichier nommé scaleNames
+  avec c = celsius et f = fahrenheit sa valeur herite du parent ne pas oublier de créer les fonctions
+  pour passer de celsius à fahrenheit et inversement.
+
+- permettre a partir de Calculator de remonter l'etat des deux inputs
+
+- créer une fonction nommé tryConvert qui permet d'eviter les valeurs d'etre égal a NAN
 
 - 

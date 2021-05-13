@@ -74,4 +74,8 @@ et afficher sur un alert de bootstrap si l'eau bout ou pas.
 
 - créer une fonction nommé tryConvert qui permet d'eviter les valeurs d'etre égal a NAN
 
-- 
+- créer un component qui peut etre composer nommé button (heritage maniére react) et ensuite creer 
+deux component composer de button avec des class bootstrap
+
+- créer un component qui est nomme splitPan il contient deux row left et right ensuite composer les
+  deux inputs a l'intérieur de ce dernier

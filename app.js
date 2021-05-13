@@ -14,9 +14,7 @@ function toFahrenheit(celsius) {
   return celsius * 1.8 + 32;
 }
 function tryConvert(temperature, convert) {
-  return Number.isNaN(parseInt(temperature))
-    ? ""
-    : convert(temperature);
+  return Number.isNaN(parseInt(temperature)) ? "" : convert(temperature);
 }
 // verification de l'etat de l'eau et affichage
 function BoilingVedict({ celsius }) {
@@ -63,6 +61,25 @@ class TemperatureInput extends React.Component {
   }
 }
 
+// composition
+function Button({ type, children }) {
+  return <button className={"btn btn-" + type}>{children}</button>;
+}
+
+function SuccessBtn({ children }) {
+  return <Button type="success">{children}</Button>;
+}
+const DangerBtn = ({ children }) => {
+  return <Button type="danger" children={children} />;
+};
+
+function Row({ left, right }) {
+ return <div className="row">
+    <div className="col-md-6">{left}</div>
+    <div className="col-md-6">{right}</div>
+  </div>;
+}
+
 // saisie de la temperature
 class Calculator extends React.Component {
   constructor() {
@@ -88,17 +105,27 @@ class Calculator extends React.Component {
       scale === "f" ? temperature : tryConvert(temperature, toFahrenheit);
     return (
       <div className="mb-3">
-        <TemperatureInput
-          scale="c"
-          value={celsius}
-          onTemperatureChange={this.newTemperatureCelsius}
+        <Row
+          left={
+            <TemperatureInput
+              scale="c"
+              value={celsius}
+              onTemperatureChange={this.newTemperatureCelsius}
+            />
+          }
+          right={
+            <TemperatureInput
+              scale="f"
+              value={fahrenheit}
+              onTemperatureChange={this.newTemperatureFahrenheit}
+            />
+          }
         />
-        <TemperatureInput
-          scale="f"
-          value={fahrenheit}
-          onTemperatureChange={this.newTemperatureFahrenheit}
-        />
+
         <BoilingVedict celsius={parseInt(celsius)} />
+        <Button type="primary m-1">Envoyer</Button>
+        <SuccessBtn>Valider avec Success</SuccessBtn>
+        <DangerBtn children="Refuser avec danger" />
       </div>
     );
   }

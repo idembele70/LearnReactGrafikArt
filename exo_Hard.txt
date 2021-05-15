@@ -79,3 +79,16 @@ deux component composer de button avec des class bootstrap
 
 - créer un component qui est nomme splitPan il contient deux row left et right ensuite composer les
   deux inputs a l'intérieur de ce dernier
+
+
+          TP : Liste de produit
+
+- Faire la maquette voici le liens : https://reactjs.org/docs/thinking-in-react.html
+
+- Créer une fonction qui permet d'affiche tout les produit dans le body de la table
+  affiche en rouge les produit qui ont stocked a false
+
+- créer l'état que doit faire remonter la valeur de chaque input dans component parent
+
+- Faire descendre l'etat dans le component fils qui ne l'a pas fait monté
+

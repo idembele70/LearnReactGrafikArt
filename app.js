@@ -1,134 +1,186 @@
-// Body style
-document.body.style.backgroundColor = "#00000078";
+// data
+const data = [
+  {
+    category: "Sporting Goods",
+    price: "$49.99",
+    stocked: true,
+    name: "Football",
+  },
+  {
+    category: "Sporting Goods",
+    price: "$9.99",
+    stocked: true,
+    name: "Baseball",
+  },
+  {
+    category: "Sporting Goods",
+    price: "$29.99",
+    stocked: false,
+    name: "Basketball",
+  },
+  {
+    category: "Electronics",
+    price: "$99.99",
+    stocked: true,
+    name: "iPod Touch",
+  },
+  {
+    category: "Electronics",
+    price: "$399.99",
+    stocked: false,
+    name: "iPhone 5",
+  },
+  { category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7" },
+];
 
-// variables
-const scaleNames = {
-  c: "Celsius",
-  f: "fahrenheit",
-};
+//
 
-function toCelsius(fahrenheit) {
-  return (fahrenheit - 32) / (9 / 5);
-}
-function toFahrenheit(celsius) {
-  return celsius * 1.8 + 32;
-}
-function tryConvert(temperature, convert) {
-  return Number.isNaN(parseInt(temperature)) ? "" : convert(temperature);
-}
-// verification de l'etat de l'eau et affichage
-function BoilingVedict({ celsius }) {
-  const className =
-    "alert alert-" +
-    (celsius >= 100 ? "primary" : Number.isNaN(celsius) ? "danger" : "dark");
-  const children =
-    "L'eau " +
-    (celsius >= 100
-      ? "bout !"
-      : Number.isNaN(celsius)
-      ? "Je ne comprends pas votre temperature"
-      : "ne bout pas !");
-  return <div className={className}>{children}</div>;
-}
-
-class TemperatureInput extends React.Component {
+class SearchBar extends React.Component {
   constructor() {
     super();
-    this.handleChange = this.handleChange.bind(this);
+    this.handleCheck = this.handleCheck.bind(this);
+    this.handleValue = this.handleValue.bind(this);
   }
-  handleChange(e) {
-    return this.props.onTemperatureChange(e.target.value);
+  handleCheck(e) {
+    return this.props.onCheckChange(e.target.checked);
+  }
+  handleValue(event) {
+    return this.props.onValueChange(event.target.value);
   }
   render() {
-    const { scale, value } = this.props;
-    const name = "scale" + (scale === "c" ? "c" : "f");
-    const scaleName = scaleNames[scale];
+    const { checked, value } = this.props;
     return (
-      <div className="mb-3">
-        <label htmlFor={name} className="form-label">
-          Température (en {scaleName})
-        </label>
+      <div>
         <input
           type="text"
-          className="form-control"
-          id={name}
-          name={name}
+          id="search"
+          name="search"
           value={value}
-          onChange={this.handleChange}
+          placeholder="Search..."
+          onChange={this.handleValue}
         />
+
+        <br />
+        <input
+          type="checkbox"
+          id="showStock"
+          name="showStock"
+          checked={checked}
+          onChange={this.handleCheck}
+          style={{ marginRight: 10 + "px" }}
+        />
+        <label htmlFor="showStock">Only show products in stock</label>
       </div>
     );
   }
 }
-
-// composition
-function Button({ type, children }) {
-  return <button className={"btn btn-" + type}>{children}</button>;
-}
-
-function SuccessBtn({ children }) {
-  return <Button type="success">{children}</Button>;
-}
-const DangerBtn = ({ children }) => {
-  return <Button type="danger" children={children} />;
-};
-
-function Row({ left, right }) {
- return <div className="row">
-    <div className="col-md-6">{left}</div>
-    <div className="col-md-6">{right}</div>
-  </div>;
-}
-
-// saisie de la temperature
-class Calculator extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      scale: "c",
-      temperature: "",
-    };
-    this.newTemperatureCelsius = this.newTemperatureCelsius.bind(this);
-    this.newTemperatureFahrenheit = this.newTemperatureFahrenheit.bind(this);
+class ProductRow extends React.Component {
+  constructor(props) {
+    super(props);
   }
-  newTemperatureCelsius(temperature) {
-    this.setState({ scale: "c", temperature });
+
+  render() {
+    const { pName, pPrice, PStock } = this.props;
+    const isStocked = PStock ? "black" : "red";
+    return (
+      <tr>
+        <td style={{ color: isStocked }}>{pName}</td>
+        <td style={{ color: isStocked }}>{pPrice}</td>
+      </tr>
+    );
   }
-  newTemperatureFahrenheit(temperature) {
-    this.setState({ scale: "f", temperature });
+}
+
+function ProductCategoryRow({ name }) {
+  return (
+    <tr>
+      <th>{name}</th>
+    </tr>
+  );
+}
+
+// Rendering data
+function renderAllData(data, checked, searchWord) {
+  const result = [];
+  let currentCategory = null;
+
+  data.forEach((product, i) => {
+    if (checked && checked != product.stocked) return;
+    if (searchWord && !product.name.match(searchWord)) return;
+    if (product.category != currentCategory) {
+      result.push(
+        <ProductCategoryRow key={i + product.name} name={product.category} />
+      );
+      currentCategory = product.category;
+    }
+    result.push(
+      <ProductRow
+        key={i}
+        pName={product.name}
+        pPrice={product.price}
+        PStock={product.stocked}
+      />
+    );
+  });
+  return result;
+}
+
+class ProductTable extends React.Component {
+  constructor(props) {
+    super(props);
   }
   render() {
-    const { temperature, scale } = this.state;
-    const celsius =
-      scale === "c" ? temperature : tryConvert(temperature, toCelsius);
-    const fahrenheit =
-      scale === "f" ? temperature : tryConvert(temperature, toFahrenheit);
+    const { name, price, checked, value } = this.props;
     return (
-      <div className="mb-3">
-        <Row
-          left={
-            <TemperatureInput
-              scale="c"
-              value={celsius}
-              onTemperatureChange={this.newTemperatureCelsius}
-            />
-          }
-          right={
-            <TemperatureInput
-              scale="f"
-              value={fahrenheit}
-              onTemperatureChange={this.newTemperatureFahrenheit}
-            />
-          }
-        />
+      <table style={{ border: 1 + "px " + "solid" + " #" + 333 }}>
+        <thead>
+          <tr>
+            <th>{name}</th>
+            <th>{price}</th>
+          </tr>
+        </thead>
+        <tbody>{renderAllData(data, checked, value)}</tbody>
+      </table>
+    );
+  }
+}
 
-        <BoilingVedict celsius={parseInt(celsius)} />
-        <Button type="primary m-1">Envoyer</Button>
-        <SuccessBtn>Valider avec Success</SuccessBtn>
-        <DangerBtn children="Refuser avec danger" />
+// Render to DOM
+class FilterableProductTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: "",
+      check: false,
+    };
+    this.checkChange = this.checkChange.bind(this);
+    this.handleValueChange = this.handleValueChange.bind(this);
+  }
+  checkChange(check) {
+    return this.setState({ check });
+  }
+  handleValueChange(value) {
+    return this.setState({ value });
+  }
+  render() {
+    const { value, check } = this.state;
+
+    return (
+      <div>
+        <SearchBar
+          value={value}
+          onValueChange={this.handleValueChange}
+          checked={check}
+          onCheckChange={this.checkChange}
+        />
+        <br />
+        <ProductTable name="Name" price="Price" value={value} checked={check} />
       </div>
     );
   }
 }
 
-ReactDOM.render(<Calculator />, document.body.children[0]);
+ReactDOM.render(
+  <FilterableProductTable />,
+  document.body.getElementsByClassName("container")[0]
+);

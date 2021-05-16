@@ -34,9 +34,10 @@ const PRODUCTS = [
   { category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7" },
 ];
 
-function ProductRow({ product }) {
+function ProductRowComponent({ product }) {
   const { name, price, stocked } = product;
   const isStocked = stocked ? "stocked" : "not-stocked";
+  console.log("render");
   return (
     <tr>
       <td className={isStocked}>{name}</td>
@@ -44,6 +45,7 @@ function ProductRow({ product }) {
     </tr>
   );
 }
+const ProductRow = React.memo(ProductRowComponent);
 function ProductCategoryRow({ product }) {
   return (
     <tr>
@@ -66,7 +68,7 @@ class ProductTable extends React.Component {
         rows.push(<ProductCategoryRow key={category} product={productRow} />);
         prevCategory = category;
       }
-      rows.push(<ProductRow key={name} product={productRow} />);
+      rows.push(<ProductRow key={name + i} product={productRow} />);
     });
     return rows;
   }
@@ -135,6 +137,12 @@ class ProductFilterTable extends React.Component {
     this.searchChange = this.searchChange.bind(this);
     this.checkChange = this.checkChange.bind(this);
   }
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log(nextProps, nextState);
+    return nextProps.data !== this.props.data ||
+      nextState.search !== this.props.search ||
+      nextState.checked !== this.props.checked
+  }
   searchChange(search) {
     return this.setState({ search });
   }
@@ -143,6 +151,7 @@ class ProductFilterTable extends React.Component {
   }
   render() {
     const { search, checked } = this.state;
+
     return (
       <div className="container">
         <div className="row search-bar">
@@ -169,3 +178,25 @@ ReactDOM.render(
   <ProductFilterTable data={PRODUCTS} />,
   document.body.getElementsByTagName("div")[0]
 );
+const PRODUCTS2 = [
+  {
+    category: "Sporting Goods",
+    price: "$290.99",
+    stocked: false,
+    name: "golf",
+  },
+  ...PRODUCTS,
+  {
+    category: "Electronics",
+    price: "$399.99",
+    stocked: true,
+    name: "iPhone 6",
+  },
+];
+
+setTimeout(() => {
+  ReactDOM.render(
+    <ProductFilterTable data={PRODUCTS2} />,
+    document.body.getElementsByTagName("div")[0]
+  );
+}, 2000);

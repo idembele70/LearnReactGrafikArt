@@ -92,3 +92,11 @@ deux component composer de button avec des class bootstrap
 
 - Faire descendre l'etat dans le component fils qui ne l'a pas fait monté
 
+
+
+         Chapitre 10, composant pur
+
+- Creer un composant pur avec une classe et une fonction et verifie si sa marche
+- ajouter une ligne de produit au début et à la fin du pure component de la class
+- en utilisant un nouveau rendu avec un timeout
+- utiliser la fonction qui à est derriere le pure component video

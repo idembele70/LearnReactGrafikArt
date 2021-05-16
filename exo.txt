@@ -197,3 +197,9 @@
     un console de data ensuite 
 
 - Chapitre 7, TP : Convertisseur Celsius / Fahrenheit :
+
+- Chapitre 10, composant pur
+    creer un component pure d'une class = class (className) extends React.PureComponent
+    creer un component pure d'une fonction = const (name) = React.memo((ComponentName))
+    ajouter un produit à un pure component ce fait avec rest paramètre (9minutes 50secondes)
+    utiliser la fonction qui à est derriere le pure component video (18minutes 30secondes)

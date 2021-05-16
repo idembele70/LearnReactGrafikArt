@@ -1,101 +1,171 @@
-const scaleNames = {
-  f: "fahrenheit",
-  c: "celsius",
-};
+document.body.style.background = "#00000066";
 
-function BoilingVedict({ celsius }) {
+const PRODUCTS = [
+  {
+    category: "Sporting Goods",
+    price: "$49.99",
+    stocked: true,
+    name: "Football",
+  },
+  {
+    category: "Sporting Goods",
+    price: "$9.99",
+    stocked: true,
+    name: "Baseball",
+  },
+  {
+    category: "Sporting Goods",
+    price: "$29.99",
+    stocked: false,
+    name: "Basketball",
+  },
+  {
+    category: "Electronics",
+    price: "$99.99",
+    stocked: true,
+    name: "iPod Touch",
+  },
+  {
+    category: "Electronics",
+    price: "$399.99",
+    stocked: false,
+    name: "iPhone 5",
+  },
+  { category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7" },
+];
+
+function ProductRow({ product }) {
+  const { name, price, stocked } = product;
+  const isStocked = stocked ? "stocked" : "not-stocked";
   return (
-    <div className="celsiusAlert">
-      L'eau {celsius >= 100 ? "bout" : "ne bout pas"}{" "}
-    </div>
+    <tr>
+      <td className={isStocked}>{name}</td>
+      <td>{price}</td>
+    </tr>
+  );
+}
+function ProductCategoryRow({ product }) {
+  return (
+    <tr>
+      <th>{product.category} </th>
+    </tr>
   );
 }
 
-class TemperatureInput extends React.Component {
+class ProductTable extends React.Component {
   constructor(props) {
     super(props);
-    this.handleChange = this.handleChange.bind(this);
   }
-  handleChange(event) {
-    return this.props.onTemperaturechange(event.target.value);
+  renderData(data, toFind, isStocked) {
+    const rows = [];
+    let prevCategory = null;
+    data.forEach((productRow, i) => {
+      const { category, name, stocked } = productRow;
+      if ((!!toFind && !name.match(toFind)) || (isStocked && !stocked)) return;
+      if (prevCategory != category) {
+        rows.push(<ProductCategoryRow key={category} product={productRow} />);
+        prevCategory = category;
+      }
+      rows.push(<ProductRow key={name} product={productRow} />);
+    });
+    return rows;
   }
   render() {
-    const { scale, value } = this.props;
-    const scaleName = "name" + (scale === "f" ? "f" : "c");
+    const { products, toFind, isStocked } = this.props;
     return (
-      <fieldset>
-        <legend className="temperature">
-          Enter temperature in {scaleNames[scale]}
-        </legend>
-        <input
-          type="text"
-          id={scaleName}
-          name={scaleName}
-          value={value}
-          onChange={this.handleChange}
-        />
-      </fieldset>
+      <table className="product-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>{this.renderData(products, toFind, isStocked)}</tbody>
+      </table>
     );
   }
 }
 
-const toFahrenheit = (celsius) => {
-  return (celsius * 9) / 5 + 32;
-};
-const toCelsius = (fahrenheit) => {
-  return (fahrenheit - 32) * 5 / 9;
-};
-
-class Calculator extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      scale: "f",
-      temperature: "",
-    };
-    this.handleCelsiusChange = this.handleCelsiusChange.bind(this);
-    this.handleFahrenheitChange = this.handleFahrenheitChange.bind(this);
+class SearchBar extends React.Component {
+  constructor() {
+    super();
+    this.handleSearchValue = this.handleSearchValue.bind(this);
+    this.handleCheckChange = this.handleCheckChange.bind(this);
   }
-  handleCelsiusChange(temperature) {
-    this.setState({ scale: "c", temperature });
+  handleSearchValue(e) {
+    return this.props.onSearchChange(e.target.value);
   }
-  handleFahrenheitChange(temperature) {
-    this.setState({ temperature, scale: "f" });
+  handleCheckChange(event) {
+    return this.props.onCheckChange(event.target.checked);
   }
-  tryconvert(temperature, convert) {
-    const toConvert = parseInt(temperature);
-    return !Number.isNaN(toConvert) ? convert(temperature) : "";
-  }
-
   render() {
-    const {} = this.props;
-    const { temperature, scale } = this.state;
-    let fahrenheit = null,
-      celsius = null;
-    if (scale === "f") {
-      fahrenheit = temperature;
-      celsius = this.tryconvert(temperature, toCelsius);
-    } else {
-      celsius = temperature;
-      fahrenheit = this.tryconvert(temperature, toFahrenheit);
-    }
-
+    const { value, check } = this.props;
     return (
       <React.Fragment>
-        <TemperatureInput
-          scale="f"
-          value={fahrenheit}
-          onTemperaturechange={this.handleFahrenheitChange}
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="Search..."
+          value={value}
+          onChange={this.handleSearchValue}
         />
-        <TemperatureInput
-          scale="c"
-          value={celsius}
-          onTemperaturechange={this.handleCelsiusChange}
-        />
-        <BoilingVedict celsius={temperature} />
+        <div className="">
+          <input
+            type="checkbox"
+            name="stock"
+            id="stock"
+            checked={check}
+            onChange={this.handleCheckChange}
+          />
+          <label htmlFor="stock">only show product in stock</label>
+        </div>
       </React.Fragment>
     );
   }
 }
 
-ReactDOM.render(<Calculator />, document.body.querySelector(".container"));
+class ProductFilterTable extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      search: "",
+      checked: true,
+    };
+    this.searchChange = this.searchChange.bind(this);
+    this.checkChange = this.checkChange.bind(this);
+  }
+  searchChange(search) {
+    return this.setState({ search });
+  }
+  checkChange(checked) {
+    return this.setState({ checked });
+  }
+  render() {
+    const { search, checked } = this.state;
+    return (
+      <div className="container">
+        <div className="row search-bar">
+          <SearchBar
+            value={search}
+            onSearchChange={this.searchChange}
+            check={checked}
+            onCheckChange={this.checkChange}
+          />
+        </div>
+        <div className="row">
+          <ProductTable
+            products={this.props.data}
+            toFind={search}
+            isStocked={checked}
+          />
+        </div>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <ProductFilterTable data={PRODUCTS} />,
+  document.body.getElementsByTagName("div")[0]
+);

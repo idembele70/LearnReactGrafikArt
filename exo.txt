@@ -203,3 +203,8 @@
     creer un component pure d'une fonction = const (name) = React.memo((ComponentName))
     ajouter un produit à un pure component ce fait avec rest paramètre (9minutes 50secondes)
     utiliser la fonction qui à est derriere le pure component video (18minutes 30secondes)
+
+-  Chapitre 11, Les refs et le DOM
+    ....
+    créer un component en function puis une class nommé Field avec inputs a l'interieur et recuperer sa valeur
+sans qu'elle soit controler par react (8min40)

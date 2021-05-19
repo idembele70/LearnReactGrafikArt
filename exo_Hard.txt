@@ -20,7 +20,7 @@ ajouter une seconde propriéte nommé step qui sera la valeur
 d'incrementation, ensuite permettre à l'utilisateur de mettre
 l'incrementation en pause et créer un bouton qui permet
 de reinitialiser ne pas oublier de definir des valeurs
-par defaults a start et step
+par defaults de start et step
 
 - creer un boutton qui permet d'incrementer manuellement 
 avec le click, ensuite remplace le bouton par un liens 
@@ -53,7 +53,7 @@ faire ensorte que le liens ne redirige pas vers le href
 - Creer un composant Class nommé field qui permet d'afficher un input et son label
   l'affiche dans le Component Home faire pour name, prénom et newsletter
 
-- Faire pareil avec une fonction ensutie ajouter un boutton a home pour recuperer
+- Faire pareil avec une fonction ensuite ajouter un bouton a home pour recuperer
   les saisie user dans la console avec JSON et reinitialiser les champs apres click
 
           TP : Convertisseur Celsius / Fahrenheit
@@ -66,7 +66,7 @@ et afficher sur un alert de bootstrap si l'eau bout ou pas.
   et d'afficher si l'eau bout ou l'eau ne bout pas !
 
 - créer un component nommé temperatureInput avec une propriéte scale il prends soit un string c pour
-  celsius et un string f pour Fahrenheit et créer objet au début du fichier nommé scaleNames
+  celsius et un string f pour Fahrenheit et créer un  objet au début du fichier nommé scaleNames
   avec c = celsius et f = fahrenheit sa valeur herite du parent ne pas oublier de créer les fonctions
   pour passer de celsius à fahrenheit et inversement.
 
@@ -100,3 +100,15 @@ deux component composer de button avec des class bootstrap
 - ajouter une ligne de produit au début et à la fin du pure component de la class
 - en utilisant un nouveau rendu avec un timeout
 - utiliser la fonction qui à est derriere le pure component video
+
+
+
+         Chapitre 11, Les refs et le DOM
+- creer une fonction flecher qui recuperer la valeur d'un input non controler par 
+react
+- faire l'etape ci-dessous sans la fonction flecher
+- créer un component en function puis une class nommé Field avec inputs a l'interieur et 
+recuperer sa valeur sans qu'elle soit controler par react
+
+
+        

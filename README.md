@@ -1,4 +1,4 @@
 # LearnReactGrafikArt
 début 28 mars 2021 à 12h18
 
-- Chapitre 10, Composant pur : FINI. Le Dimanche 16 mai 2021 à 21H59
+- Chapitre 12, React Dev Tool : FINI. Le Dimanche 19 mai 2021 à 21H53

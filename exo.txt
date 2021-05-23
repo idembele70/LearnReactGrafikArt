@@ -208,3 +208,10 @@
     ....
     créer un component en function puis une class nommé Field avec inputs a l'interieur et recuperer sa valeur
 sans qu'elle soit controler par react (8min40)
+
+-  Chapitre 13, Create React App
+    creer un projet react !
+    creer une class Clock qui affiche l'heure et l'afficher dans l'app
+    creer un css specifique a ce component
+
+-  Chapitre 16, Les hooks useEffect

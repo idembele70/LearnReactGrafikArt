@@ -93,7 +93,6 @@ deux component composer de button avec des class bootstrap
 - Faire descendre l'etat dans le component fils qui ne l'a pas fait monté
 
 
-
          Chapitre 10, composant pur
 
 - Creer un composant pur avec une classe et une fonction et verifie si sa marche
@@ -111,4 +110,35 @@ react
 recuperer sa valeur sans qu'elle soit controler par react
 
 
-        
+
+         Chapitre 13, Create React App
+- creer un projet react !
+- creer une class clock qui se met à jour regulièrement
+- creer un css specifique a ce component
+
+
+         Chapitre 14, React avec Parcel
+- creer un projet react avec parcel et faire un hello world et lui applique un style css
+
+
+
+         Chapitre 15, Les hooks useState
+ - Créer un compteur dans une fonction que l'on incrementer avec useState
+ - faire ensorte de garde toutes les etats initials maintenant lors du click
+ - Créer deux buttons qui au click incrementer grace a useState
+ - créer un hook useIncrementer qui permet d'incrementer les valeurs ensuite l'appeller
+ dans une autre fonction
+ - faire cette fonction et permettre à l'utilisateur de choisir la valeur de début et le
+ pas d'incrementation (bonus permettre de desincrementer et reset la valeur)
+
+
+
+         Chapitre 16, Les hooks useEffect
+  - faire cette fonction et permettre à l'utilisateur de choisir la valeur de début et le
+  pas d'incrementation (bonus permettre de desincrementer et reset la valeur) ensuite a chaque 
+  incrementation utilise useEffect pour change le titre de la page ne pas oublie d'utiliser 
+  le second paramètre de useEffect
+  - creer un compteur qui s'incremente tout seul
+  - remplacer le button au bout de 2 secondes et regarde ce qui se passer
+  - maintenant regler le problème (componentWillUnMount maniére fonction)
+  - creer un effet qui s'occupe de change de titre de la page independant du premier effet

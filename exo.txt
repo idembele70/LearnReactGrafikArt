@@ -215,3 +215,7 @@ sans qu'elle soit controler par react (8min40)
     creer un css specifique a ce component
 
 -  Chapitre 16, Les hooks useEffect
+- Chapitre 17, créer un hook personnalisé
+a partir de 12minutes20
+on utilise jsonplaceholder pour recuperer la liste dans la categorie todo
+on veut 10 item donc on utilise ? _limit=10

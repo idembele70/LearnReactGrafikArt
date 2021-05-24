@@ -1,27 +1,25 @@
 import { useEffect, useState } from "react";
 
-const useIncremente = (initialValue, step) => {
+const useManualIncremente = (initialValue = 0, step = 1) => {
   const [count, setCount] = useState(initialValue, step);
-
-  const onIncremente = (_) => setCount((c) => c + step);
-
+  const onIncremente = () => setCount((count) => count + step);
   return [count, onIncremente];
 };
 
-function Compteur() {
-  const [count, autoIncremente] = useIncremente(0, 1);
-
+const useAutoIncremente = (initialValue, step) => {
+  const [compteur, manualIncremente] = useManualIncremente(initialValue, step);
+  
   useEffect(() => {
     const timer = setInterval(() => {
-      console.log("I use effect !");
-      autoIncremente();
+      manualIncremente();
     }, 1000);
-    return (_) => clearInterval(timer);
+    return () => clearInterval(timer);
   }, []);
+  return compteur;
+};
 
-  useEffect((_) => (document.title = "compteur" + count));
+export default function Compteur() {
+  const compteur = useAutoIncremente();
 
-  return <button>valeur a incremente : {count}</button>;
+  return <p>valeur : {compteur} </p>;
 }
-
-export default Compteur;

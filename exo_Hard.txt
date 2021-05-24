@@ -134,7 +134,7 @@ recuperer sa valeur sans qu'elle soit controler par react
 
 
          Chapitre 16, Les hooks useEffect
-  - faire cette fonction et permettre à l'utilisateur de choisir la valeur de début et le
+  - faire un compteur et permettre à l'utilisateur de choisir la valeur de début et le
   pas d'incrementation (bonus permettre de desincrementer et reset la valeur) ensuite a chaque 
   incrementation utilise useEffect pour change le titre de la page ne pas oublie d'utiliser 
   le second paramètre de useEffect
@@ -142,3 +142,23 @@ recuperer sa valeur sans qu'elle soit controler par react
   - remplacer le button au bout de 2 secondes et regarde ce qui se passer
   - maintenant regler le problème (componentWillUnMount maniére fonction)
   - creer un effet qui s'occupe de change de titre de la page independant du premier effet
+
+
+
+         Chapitre 17, créer un hook personnalisé
+  - Créer un hook nommé useIncrementer il prends en paramètre la valeur initial et le pas,
+  par defaut il est à 1
+  - Créer un composant nommé compteur qui permet d'incrementer il utilise le hook créer au
+  dessus
+  - créer un checkbox dans render qui en fonction de son état affiche ou non le compteur 
+  pour cela créer un hook personnalisé nommé useToggle il prend un paramètre
+  - créer un deuxieme hooks nommé useAutoIncremente il prends deux paramètre
+  initialValue et step ne pas oublie de l'affiche dans Compteur !!
+  - créer un hooks nommé useAutoIncremente qui s'incremente tout seul et qui utilise le 
+  hooks useManualIncremente
+  - utiliser le site jsonplaceholder pour recuperer une liste de todo et la liste des taches
+   dans un component nommé todolist ne pas oublie d'utilser le hook useState et useEffect
+  - utilise le hook useState pour gerer le chargement de la page avant l'arrivé des données
+  - creer un composant nommé postTable qui permet d'afficher les dernières commentaires
+  (les 10 derniers)
+  - créer un hook nommé useFetch

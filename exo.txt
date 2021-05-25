@@ -196,6 +196,8 @@
     créer une const nommé data qui est la méthode stringify de JSON il prends en paramètre state et faire 
     un console de data ensuite 
 
+// fini les guides pas à pas maintenant quelque infos utile seulement si besoin re regarde les vidéos
+
 - Chapitre 7, TP : Convertisseur Celsius / Fahrenheit :
 
 - Chapitre 10, composant pur
@@ -215,7 +217,25 @@ sans qu'elle soit controler par react (8min40)
     creer un css specifique a ce component
 
 -  Chapitre 16, Les hooks useEffect
+
 - Chapitre 17, créer un hook personnalisé
 a partir de 12minutes20
 on utilise jsonplaceholder pour recuperer la liste dans la categorie todo
 on veut 10 item donc on utilise ? _limit=10
+
+- Chapitre 18, Les hook useMemo & useCallback
+la fonction wait : 
+function wait(duration) {
+  const t = Date.now();
+  while (true) {
+    if (Date.now() - t > duration) {
+      console.log(Date.now() - t);
+      return true;
+    }
+  }
+}
+la fonction encode : 
+function encode(number) {
+  wait(1000);
+  return Date.now();
+}

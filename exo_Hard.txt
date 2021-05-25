@@ -148,17 +148,29 @@ recuperer sa valeur sans qu'elle soit controler par react
          Chapitre 17, créer un hook personnalisé
   - Créer un hook nommé useIncrementer il prends en paramètre la valeur initial et le pas,
   par defaut il est à 1
-  - Créer un composant nommé compteur qui permet d'incrementer il utilise le hook créer au
-  dessus
+  - Créer un composant nommé compteur qui permet d'incrementer automatiquement
+   il utilise le hook créer au dessus
   - créer un checkbox dans render qui en fonction de son état affiche ou non le compteur 
   pour cela créer un hook personnalisé nommé useToggle il prend un paramètre
-  - créer un deuxieme hooks nommé useAutoIncremente il prends deux paramètre
-  initialValue et step ne pas oublie de l'affiche dans Compteur !!
-  - créer un hooks nommé useAutoIncremente qui s'incremente tout seul et qui utilise le 
-  hooks useManualIncremente
+  - créer un hooks nommé useAutoIncremente il prends deux arguments initialValue et step
+   qui s'incremente tout seul et qui utilise le hooks useManualIncremente
   - utiliser le site jsonplaceholder pour recuperer une liste de todo et la liste des taches
    dans un component nommé todolist ne pas oublie d'utilser le hook useState et useEffect
   - utilise le hook useState pour gerer le chargement de la page avant l'arrivé des données
   - creer un composant nommé postTable qui permet d'afficher les dernières commentaires
   (les 10 derniers)
   - créer un hook nommé useFetch
+
+
+
+         Chapitre 18, Les hook useMemo & useCallback
+- créer un composant qui  comptient deux champs un pour le prénom et un pour le nom
+- ensuite creer la fonction wait et encode voir dans exo.txt si besoin
+- grace a use memo s'occupe d'encode le nombre à chaque changement de nombre
+- créer un composant pure nommé mon bouton il a un props onclick et il console log
+ d'un mot
+- créer un boutton qui s'incrementer au click ensuite appeler les deux buttons dans 
+  le render le component nommé Button au click fait un alert bonjour
+- maintenant tester si le Button memo est rendu a chaque click si oui bah alors utilise
+use memo pour regler ce problème
+- maintenant utiliser useCallback

@@ -1,7 +1,13 @@
+import { render } from "react-dom";
+
 // racourci JS
 const { body } = document;
+body.style.background = "#00000059";
 
-import { render } from "React-dom";
-import React from 'react';
-import './index.css';
-render(<div>Hello world</div>, body.querySelector('#app'));
+
+
+function App() {
+ 
+}
+
+render(<App />, body.querySelector("#app"));

@@ -167,10 +167,26 @@ recuperer sa valeur sans qu'elle soit controler par react
 - créer un composant qui  comptient deux champs un pour le prénom et un pour le nom
 - ensuite creer la fonction wait et encode voir dans exo.txt si besoin
 - grace a use memo s'occupe d'encode le nombre à chaque changement de nombre
-- créer un composant pure nommé mon bouton il a un props onclick et il console log
+- créer un composant pure nommé mon bouton il a un props onclick et il fait console log
  d'un mot
 - créer un boutton qui s'incrementer au click ensuite appeler les deux buttons dans 
   le render le component nommé Button au click fait un alert bonjour
 - maintenant tester si le Button memo est rendu a chaque click si oui bah alors utilise
 use memo pour regler ce problème
 - maintenant utiliser useCallback
+
+
+
+         Chapitre 19, Le hook useRef
+   créer un input il a un ref qui utiliser un useRef
+   créer un bouton au click appel la valeur du useRef de input
+   créer un compteur qui est incrementable au click il utilise useRef
+
+
+
+         Chapitre 20, Le hook useLayoutEffect
+   créer un component qui incremente et utiliser useCallback pour la fonction du click
+   utiliser useEffect il attends 1 sec avant d'affiche la valeur du compteur dans la
+   console ensuite utilise useLayoutEffect
+   créer une ref sur le bouton il change de couleur avant le rendu si count est modulo
+   2 ou non il depend du compteur 

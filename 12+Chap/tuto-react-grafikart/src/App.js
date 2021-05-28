@@ -1,57 +1,32 @@
-import { useEffect, useState } from "react";
+import { useReducer } from "react";
 
-function useFetch(link) {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    (async function () {
-      await fetch(link).then((res) => res.json().then((data) => setData(data)));
-      setLoading(false);
-    })();
-  }, []);
-  return [data, loading];
+function init(initialValue) {
+  return { count: initialValue };
 }
 
-function DataRow({ info }) {
-  const { name, email, body } = info;
-  console.log(name);
-  return (
-    <tr>
-      <td>{name}</td>
-      <td>{email}</td>
-      <td>{body}</td>
-    </tr>
-  );
-}
-
-function PostTable() {
-  const [data, loading] = useFetch(
-    "https://jsonplaceholder.typicode.com/comments?_limit=10"
-  );
-  if (loading) return "Chargement...";
-  return (
-    <table>
-      <thead>
-        <tr>
-          <th>Nom</th>
-          <th>Email</th>
-          <th>Commentaire</th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((com) => (
-          <DataRow key={com.id} info={com} />
-        ))}
-      </tbody>
-    </table>
-  );
-}
-
+function reducer(state, action) {
+  switch (action.type) {
+    case "+":
+      return { count: state.count + action.step };
+    case "-":
+      return { count: (state.count -= 1) };
+    case "rReset":
+      return init(2);
+    default:
+      throw new Error(action.type, "inconnu !");
+  }
+} 
 function App() {
+  const [count, dispatch] = useReducer(reducer, 0, init);
+  const handleReset = () => dispatch({ type: "reset" });
+  console.log(count)
   return (
-    <div className="App">
-      <PostTable />
-    </div>
+    <>
+      <p> {count.count} </p>
+      <button onClick={() => dispatch({ type: "+" , step : 10})}>+</button>
+      <button onClick={() => dispatch({ type: "-" })}>-</button>
+      <button onClick={handleReset}>Reset</button>
+    </>
   );
 }
 export default App;

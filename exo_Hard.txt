@@ -190,3 +190,11 @@ use memo pour regler ce problème
    console ensuite utilise useLayoutEffect
    créer une ref sur le bouton il change de couleur avant le rendu si count est modulo
    2 ou non il depend du compteur 
+
+
+
+         Chapitre 20, Le hook useReducer
+  créer un compteur qui peut etre incremente, desincrementer et reinitialiser
+  ensuite empeche que les decrementation soit en dessous de 0
+  ensuite permettre à l'utilisateur de reinitialiser la valuer
+  ensuite permettre à l'utilisateur de choisir le pas et attribue un pas par default
